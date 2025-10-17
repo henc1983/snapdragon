@@ -40,6 +40,23 @@ if ( ! class_exists( 'SnapdragonHelperFunctions' ) ) :
             print('<script type="text/javascript">window.top.location="'.$_SERVER['REQUEST_URI'].'";</script>');
             exit;
         }
+
+
+
+        public function post_thumbnail( $size ) {
+            /**
+             * Display post thumbnail
+             *
+             * @var $size thumbnail size. thumbnail|medium|large|full|$custom
+             * @uses has_post_thumbnail()
+             * @uses the_post_thumbnail
+             * @param string $size the post thumbnail size.
+             * @since 1.5.0
+             */
+            if ( has_post_thumbnail() ) {
+			    the_post_thumbnail( $size );
+		    }
+        }
         // End of class
     }
 

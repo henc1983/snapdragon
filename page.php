@@ -24,9 +24,11 @@ get_header();
             // Can use action hooks
             do_action( 'snapdragon_page_before' );
             
+            
             // load templates/content-page.php template
             get_template_part( 'templates/content' , 'page' );
-            
+
+
             /**
              * Functions hooked in to snapdragon_page_after action
              *

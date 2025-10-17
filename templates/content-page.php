@@ -14,9 +14,12 @@ defined('ABSPATH') or die('No script kiddies please!');
     <?php 
     /**
 	 * Functions hooked in to storefront_page add_action
+     * 
+     * @hooked snapdragon_page_header()
+     * @hooked snapdragon_page_content()
+     * @hooked snapdragon_edit_post_link()
 	 */
-    get_template_part( 'template-parts/page/page' , 'header' );
-    get_template_part( 'template-parts/page/page' , 'content' );
+    do_action( 'snapdragon_page' );
     ?>
 
 </article>

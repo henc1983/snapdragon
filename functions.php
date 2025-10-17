@@ -34,3 +34,14 @@ if ( ! isset( $content_width ) ) {
  * 
  */
 require_once 'inc/class-snapdragon.php';
+
+
+
+/**
+ * Including template files
+ * 
+ * @see inc/snapdragon-template-functions.php
+ * @see inc/snapdragon-template-hooks.php
+ */
+require_once 'inc/snapdragon-template-functions.php';
+require_once 'inc/snapdragon-template-hooks.php';

@@ -27,6 +27,11 @@ get_header();
             // load templates/content-page.php template
             get_template_part( 'templates/content' , 'page' );
             
+            /**
+             * Functions hooked in to snapdragon_page_after action
+             *
+             * @hooked snapdragon_display_comments - 10
+             */
             do_action( 'snapdragon_page_after' );
 
         endwhile;

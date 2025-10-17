@@ -7,6 +7,8 @@
  * @package snapdragon
  */
 
+defined('ABSPATH') or die('No script kiddies please!');
+
 ?>
 
 <div class="no-results not-found">

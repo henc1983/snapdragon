@@ -8,6 +8,10 @@
  * @package snapdragon
  */
 
+defined('ABSPATH') or die('No script kiddies please!');
+
+
+
 while ( have_posts() ) :
 	the_post();
 

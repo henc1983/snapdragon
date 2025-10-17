@@ -1,4 +1,4 @@
-/*
+/*!
 Theme Name: Snapdragon
 Theme URI: https://epoxydreamshop.hu
 Author: Makai Henrik
@@ -12,4 +12,7 @@ License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: snapdragon
 Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-site-editing, block-patterns, rtl-language-support, sticky-post, threaded-comments, translation-ready, wide-blocks, block-styles, style-variations, accessibility-ready, blog, portfolio, news
-*/
+!*/
+
+@import './src/styles/sass/variables';
+@import './src/styles/sass/root';

@@ -13,6 +13,7 @@
  * @see  snapdragon_post_header()
  * @see  snapdragon_post_content()
  * @see  snapdragon_post_taxonomy()
+ * @see  snapdragon_post_meta()
  */
 add_action( 'snapdragon_loop_posts', 'snapdragon_post_header', 10 );
 add_action( 'snapdragon_loop_posts', 'snapdragon_post_content', 30 );

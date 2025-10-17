@@ -33,3 +33,10 @@ if ( ! isset( $content_width ) ) {
  * 
  */
 require_once 'inc/class-snapdragon.php';
+
+
+echo '<pre>';
+
+var_dump(
+	$snapdragon->defaults::COOKIE_EXP_TIME
+);

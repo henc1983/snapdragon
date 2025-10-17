@@ -50,6 +50,10 @@ if ( ! class_exists( 'Snapdragon' ) ) :
 
 
 		public function __construct() {
+			// Create main $snapdragon object
+			$GLOBALS['snapdragon'] = ( object ) $this;
+
+
 			$theme = wp_get_theme();
 			$this->version 		= $theme->get( 'Version' );
 			$this->author		= $theme->get( 'Author' );
@@ -63,10 +67,7 @@ if ( ! class_exists( 'Snapdragon' ) ) :
 			// Add helper classes
 			$this->init_defaults();
 			$this->init_cookies();
-
-
-			// Create main $snapdragon object
-			$GLOBALS['snapdragon'] = ( object ) $this;
+			
 		}
 		
 		

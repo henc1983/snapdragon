@@ -27,15 +27,10 @@ get_header();
             endwhile;
         
         else :
+            get_template_part( 'templates/content' , 'none' );
+        endif;
+        
     ?>
-
-    <div class="no-results not-found">
-        <header class="page-header">
-            <h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'snapdragon' ); ?></h1>
-        </header>
-    </div>
-
-    <?php endif; ?>
 
     </main>
 </div>

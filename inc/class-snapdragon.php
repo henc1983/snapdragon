@@ -29,6 +29,7 @@ if ( ! class_exists( 'Snapdragon' ) ) :
 
 		public $defaults;
 		public $cookies;
+		public $helpers;
 		public $translates;
 		public $setup;
 		public $customizer;
@@ -66,8 +67,9 @@ if ( ! class_exists( 'Snapdragon' ) ) :
 
 			// Add helper classes
 			$this->init_defaults();
+			$this->init_helpers();
 			$this->init_cookies();
-			
+
 		}
 		
 		
@@ -81,6 +83,13 @@ if ( ! class_exists( 'Snapdragon' ) ) :
 
 		private function init_cookies() {
 			$this->cookies = $this->check_file(__DIR__ . '/helpers/class-snapdragon-cookies.php');
+			return $this;
+		}
+		
+		
+
+		private function init_helpers() {
+			$this->helpers = $this->check_file(__DIR__ . '/helpers/class-snapdragon-helpers.php');
 			return $this;
 		}
 

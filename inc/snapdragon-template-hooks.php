@@ -45,3 +45,34 @@ add_action( 'snapdragon_page_after', 'snapdragon_display_comments', 10 );
  */
 add_action( 'snapdragon_homepage', 'snapdragon_homepage_header', 10 );
 add_action( 'snapdragon_homepage', 'snapdragon_page_content', 20 );
+
+
+
+/**
+ * Main Header
+ *
+ * @see  snapdragon_homepage_header()
+ * @see  snapdragon_page_content()
+ */
+add_action( 'snapdragon_main_header', 'snapdragon_main_header', 10 );
+
+
+
+/**
+ * Mobile Button Group on Footer
+ *
+ * @see  snapdragon_mobile_button_group_on_footer()
+ */
+add_action( 'wp_footer', 'snapdragon_mobile_button_group_on_footer', -1 );
+
+
+
+/**
+ * Additional Impoortan Theme Hooks
+ * 
+ * @see snapdragon_preloader_animation()
+ * @see snapdragon_media_query_form()
+ */
+add_action( 'init' , 'snapdragon_media_query_post_request' , 10 );
+add_action( 'wp_body_open' , 'snapdragon_preloader_animation' , -1 );
+add_action( 'wp_body_open' , 'snapdragon_media_query_form' , 0 );

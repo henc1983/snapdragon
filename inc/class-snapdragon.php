@@ -31,6 +31,7 @@ if ( ! class_exists( 'Snapdragon' ) ) :
 		public $cookies;
 		public $helpers;
 		public $translates;
+		public $requests;
 		public $setup;
 		public $customizer;
 		public $woocommerce;
@@ -68,6 +69,7 @@ if ( ! class_exists( 'Snapdragon' ) ) :
 			$this->init_defaults();
 			$this->init_helpers();
 			$this->init_cookies();
+			$this->init_requests();
 			$this->init_setup();
 
 		}
@@ -90,6 +92,13 @@ if ( ! class_exists( 'Snapdragon' ) ) :
 
 		private function init_helpers() {
 			$this->helpers = $this->check_file(__DIR__ . '/helpers/class-snapdragon-helpers.php');
+			return $this;
+		}
+		
+		
+
+		private function init_requests() {
+			$this->requests = $this->check_file(__DIR__ . '/helpers/class-snapdragon-requests.php');
 			return $this;
 		}
 		

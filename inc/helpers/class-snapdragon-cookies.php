@@ -23,7 +23,6 @@ if ( ! class_exists( 'SnapdragonCookies' ) ) :
 
 
         private static $instance = null;
-        public $store;
 
 
 
@@ -34,25 +33,6 @@ if ( ! class_exists( 'SnapdragonCookies' ) ) :
 
             return self::$instance;
 		}
-
-
-
-        public function __construct() {
-            $this->store = [];
-        }
-
-
-
-        public function store_cookie($name, $value) {
-            $this->store[$name] = $value;
-            return $this;
-        }
-
-
-
-        public function get_store() {
-            return $this->store;
-        }
 
 
 

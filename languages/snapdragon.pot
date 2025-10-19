@@ -1,0 +1,98 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Snapdragon\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-18 05:21+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.8.0; wp-6.8.3; php-8.2.12\n"
+"X-Domain: snapdragon"
+
+#: inc/snapdragon-template-functions.php:60
+msgid "% Comments"
+msgstr ""
+
+#. used between list items, there is a space after the comma
+#: inc/snapdragon-template-functions.php:189
+#: inc/snapdragon-template-functions.php:192
+msgid ", "
+msgstr ""
+
+#: inc/snapdragon-template-functions.php:60
+msgid "1 Comment"
+msgstr ""
+
+#: inc/snapdragon-template-functions.php:51
+msgid "by"
+msgstr ""
+
+#: inc/snapdragon-template-functions.php:198
+msgid "Category:"
+msgid_plural "Categories:"
+msgstr[0] ""
+msgstr[1] ""
+
+#. %s: post title
+#: inc/snapdragon-template-functions.php:157
+#, php-format
+msgid "Continue reading %s"
+msgstr ""
+
+#. %s: Name of current post. Only visible to screen readers
+#: inc/snapdragon-template-functions.php:305
+#, php-format
+msgid "Edit <span class=\"screen-reader-text\">%s</span>"
+msgstr ""
+
+#. URI of the theme
+msgid "https://epoxydreamshop.hu"
+msgstr ""
+
+#. Author URI of the theme
+msgid "https://epoxydreamshop.hu/makaihenrik"
+msgstr ""
+
+#: inc/snapdragon-template-functions.php:60
+msgid "Leave a comment"
+msgstr ""
+
+#. Author of the theme
+msgid "Makai Henrik"
+msgstr ""
+
+#: templates/content-none.php:17
+msgid "Nothing Found"
+msgstr ""
+
+#: inc/snapdragon-template-functions.php:166
+#: inc/snapdragon-template-functions.php:281
+msgid "Pages:"
+msgstr ""
+
+#. %s: post date
+#: inc/snapdragon-template-functions.php:45
+#, php-format
+msgid "Posted on %s"
+msgstr ""
+
+#. Name of the theme
+msgid "Snapdragon"
+msgstr ""
+
+#. Description of the theme
+msgid "Snapdragon e-commerce theme for Wordpress"
+msgstr ""
+
+#: inc/snapdragon-template-functions.php:204
+msgid "Tag:"
+msgid_plural "Tags:"
+msgstr[0] ""
+msgstr[1] ""

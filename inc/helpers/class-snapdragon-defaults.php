@@ -93,11 +93,27 @@ if ( ! class_exists( 'SnapdragonDefaults' ) ) :
         public const PRODUCT_GRID_VALUES = ['grid', 'lines'];
 
 
+        public const MEDIAQUERY_POST_NAME = 'snapdragon-device-screen';
         public const MEDIAQUERY_COOKIE_NAME = 'snapdragon_device_screen';
         public const MEDIAQUERY_DEFAULT = 'desktop';
         public const MEDIAQUERY_DEVICES = ['mobile','tablet','laptop','desktop'];
 
-
+        
+        
+        public const IMPORTANT_COOKIE_PAIRS = [
+            self::TRANSLATE_COOKIE_NAME                     => self::TRANSLATE_DEFAULT_SELECTED,
+            self::COOKIE_ACCEPTED_NAME                      => self::COOKIE_ACCEPTED,
+            self::ADV_COOKIE_SEASONAL_MODAL_NAME            => self::ADV_COOKIE_SEASONAL_MODAL_SHOWED,
+            self::ADV_COOKIE_MODAL_NAME                     => self::ADV_COOKIE_MODAL_SHOWED,
+            self::PRODUCT_WISHLIST_COOKIE_NAME              => [],
+            self::PRODUCT_LAST_VIEWED_COOKIE_NAME           => [],
+            self::PRODUCT_ORDERBY_COOKIE_NAME               => self::PRODUCT_ORDERBY_COOKIE,
+            self::PRODUCT_NUMBER_COOKIE_NAME                => self::PRODUCT_NUMBER,
+            self::PRODUCT_ONLY_SALES_COOKIE_NAME            => self::PRODUCT_ONLY_SALES,
+            self::PRODUCT_PRICE_COOKIE_NAME                 => self::PRODUCT_PRICE,
+            self::PRODUCT_GRID_COOKIE_NAME                  => self::PRODUCT_GRID,
+            self::MEDIAQUERY_COOKIE_NAME                    => self::MEDIAQUERY_DEFAULT,
+        ];
 
         public static function instance() {
 			if ( self::$instance === null ) {

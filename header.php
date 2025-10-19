@@ -7,13 +7,18 @@
  * @package snapdragon
  */
 
+
+global $snapdragon;
+
+
+
 ?>
 
 <!doctype html>
 <html <?php language_attributes(); ?>>
     <head>
         <meta charset="<?php bloginfo( 'charset' ); ?>">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
         <link rel="profile" href="http://gmpg.org/xfn/11">
         <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
@@ -27,7 +32,17 @@
 
     <div id="page" class="site">
 
-        <header id="masterheader" class="site-header" role="banner" style="<?php // style_function ?>">
+        <?php 
+
+        if ( $snapdragon->cookies->get_cookie($snapdragon->defaults::MEDIAQUERY_COOKIE_NAME) === 'desktop' ) :
+
+        ?>
+
+        <header id="snapdragon-header" class="site-header" role="banner" style="<?php // style_function ?>">
+            <?php do_action( 'snapdragon_main_header' ); ?>
         </header>
         
+
+        <?php endif;?>
+
         <div id="content" class="site-content" tabindex="-1">

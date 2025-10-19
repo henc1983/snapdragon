@@ -14,25 +14,6 @@ require_once __DIR__ . '/template-functions/snapdragon-footer-functions.php';
 
 
 
-
-if ( ! function_exists( 'snapdragon_media_query_post_request' ) ) {
-    function snapdragon_media_query_post_request() {
-        global $snapdragon;
-
-        $post_name = $snapdragon->defaults::MEDIAQUERY_POST_NAME;
-        $cookie_name = $snapdragon->defaults::MEDIAQUERY_COOKIE_NAME;
-
-        if ( isset($_POST[$post_name] )) {
-            $snapdragon->cookies->set_cookie($cookie_name, $_POST[$post_name]);
-            unset($_POST[$post_name]);
-            
-            $snapdragon->helpers->reload_page();
-        }
-    }
-}
-
-
-
 if ( ! function_exists( 'snapdragon_preloader_animation' ) ) {
 
     function snapdragon_preloader_animation() { 

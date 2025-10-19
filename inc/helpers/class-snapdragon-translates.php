@@ -74,7 +74,7 @@ if ( ! class_exists( 'SnapdragonTranslates' ) ) :
                     $this->capable[$lang] = (object)[
                         'code' => $lang,
                         'title' => $this->get_title($lang),
-                        'attached_image' => $path . basename($file)
+                        'attached_image' => get_template_directory_uri() .'/'. $snapdragon->defaults::TRANSLATE_FLAGS_DIR . basename($file)
                     ];
                 }
 
@@ -91,6 +91,18 @@ if ( ! class_exists( 'SnapdragonTranslates' ) ) :
             }
             
             $this->enabled = get_option($snapdragon->defaults::TRANSLATE_OPTIONS_NAME, $snapdragon->defaults::TRANSLATE_DEFAULT_ENABLED_LANGUAGES);
+        }
+
+
+
+        public function get_selected_data() {
+            global $snapdragon;
+
+            if( ! is_object( $snapdragon ) || ! property_exists( $snapdragon , 'defaults' ) ) {
+                return false;
+            }
+            
+            return $this->capable[$snapdragon->cookies->get_cookie( $snapdragon->defaults::TRANSLATE_COOKIE_NAME )];
         }
         // End of class
     }

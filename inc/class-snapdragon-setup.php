@@ -41,18 +41,18 @@ if ( ! class_exists( 'SnapdragonSetup' ) ) :
 
 		public function __construct() {
 
-			add_action( 'init', fn()=>$this->set_important_cookies(), 0 );
+			add_action( 'init', [ $this , 'set_important_cookies' ], 0 );
 			
-			add_action( 'wp_enqueue_scripts', fn()=>$this->enqueue_styles(), 10 );
-			add_action( 'wp_enqueue_scripts', fn()=>$this->enqueue_scripts(), 10 );
+			add_action( 'wp_enqueue_scripts', [ $this , 'enqueue_styles' ], 10 );
+			add_action( 'wp_enqueue_scripts', [ $this , 'enqueue_scripts' ], 10 );
 
-			add_action( 'after_setup_theme', fn()=>$this->theme_supports() );
-			add_action( 'after_setup_theme', fn()=>$this->load_theme_textdomains() );
+			add_action( 'after_setup_theme', [ $this , 'theme_supports' ] );
+			add_action( 'after_setup_theme', [ $this , 'load_theme_textdomains' ] );
 
 		}
 
 
-		private function set_important_cookies() {
+		public function set_important_cookies() {
 			
 			global $snapdragon;
 
@@ -86,7 +86,7 @@ if ( ! class_exists( 'SnapdragonSetup' ) ) :
 
 
 
-		private function theme_supports() {
+		public function theme_supports() {
 			
 			// Add default posts and comments RSS feed links to head.
 			add_theme_support( 'automatic-feed-links' );
@@ -132,7 +132,7 @@ if ( ! class_exists( 'SnapdragonSetup' ) ) :
 
 
 
-		private function load_theme_textdomains() {
+		public function load_theme_textdomains() {
 			// Loads wp-content/languages/themes/storefront-it_IT.mo.
 			load_theme_textdomain( 'snapdragon', trailingslashit( WP_LANG_DIR ) . 'themes' );
 
@@ -146,7 +146,7 @@ if ( ! class_exists( 'SnapdragonSetup' ) ) :
 
 
 
-		private function enqueue_styles() {
+		public function enqueue_styles() {
 			global $snapdragon;
 			
 			$suffix = ( defined( 'WP_DEBUG' ) && WP_DEBUG ) ? '' : '.min';
@@ -160,7 +160,7 @@ if ( ! class_exists( 'SnapdragonSetup' ) ) :
 
 
 
-		private function enqueue_scripts() {
+		public function enqueue_scripts() {
 			global $snapdragon;
 			
 			$suffix = ( defined( 'WP_DEBUG' ) && WP_DEBUG ) ? '' : '.min';

@@ -37,7 +37,7 @@ if ( ! class_exists( 'SnapdragonRequestHandler' ) ) :
 
 
         public function __construct() {
-            add_action( 'init' , [ $this , 'media_query_post_request' ] );
+            add_action( 'init' , [ $this , 'media_query_post_request' ] , 10);
         }
 
 

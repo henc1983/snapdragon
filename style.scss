@@ -14,32 +14,6 @@ Text Domain: snapdragon
 Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-site-editing, block-patterns, rtl-language-support, sticky-post, threaded-comments, translation-ready, wide-blocks, block-styles, style-variations, accessibility-ready, blog, portfolio, news
 !*/
 
+@import './src/styles/sass/reboot';
 @import './src/styles/sass/main_header';
 @import './src/styles/sass/site_preloader';
-
-
-
-*, *::before, *::after {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    font-family: var(--wp--preset--font-family--primary);
-    font-size: var(--wp--preset--font-size--medium);
-    line-height: 1.6;
-    font-weight: 400;
-    color: var(--wp--preset--color--contrast);
-    background-color: var(--wp--preset--color--base);
-    overflow-x: hidden;
-}
-
-.wrapper, .site-content {
-    width: 100%;
-    max-width: var(--wp--style--global--wide-size);
-    margin-inline: auto;
-}
-
-img {
-    max-width: 100%;
-}

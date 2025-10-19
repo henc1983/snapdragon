@@ -45,6 +45,10 @@ if ( ! class_exists( 'SnapdragonRequestHandler' ) ) :
         public function media_query_post_request() {
             global $snapdragon;
 
+            if ( ! is_object( $snapdragon ) || ! property_exists( $snapdragon , 'defaults') ) {
+                return;
+            }
+
             $post_name = $snapdragon->defaults::MEDIAQUERY_POST_NAME;
             $cookie_name = $snapdragon->defaults::MEDIAQUERY_COOKIE_NAME;
 

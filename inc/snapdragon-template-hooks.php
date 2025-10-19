@@ -75,3 +75,4 @@ add_action( 'wp_footer', 'snapdragon_mobile_button_group_on_footer', -1 );
  */
 add_action( 'wp_body_open' , 'snapdragon_preloader_animation' , -1 );
 add_action( 'wp_body_open' , 'snapdragon_media_query_form' , 0 );
+add_action( 'wp_body_open' , 'snapdragon_language_selector_form' , 10 );

@@ -12,9 +12,10 @@ defined('ABSPATH') or die('No script kiddies please!');
 
 if ( ! function_exists('snapdragon_mobile_button_group_on_footer') ) {
     function snapdragon_mobile_button_group_on_footer() {
-        global $snapdragon;
+        
+        $snapdragon = snapdragon_object_return();
 
-        if ( ! is_object( $snapdragon ) || ! property_exists( $snapdragon , 'defaults' )) {
+        if ( ! $snapdragon ) {
             return;
         }
 

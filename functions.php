@@ -37,6 +37,11 @@ require_once 'inc/class-snapdragon.php';
 
 
 
+// Include theme functions
+require_once 'inc/snapdragon-theme-functions.php';
+
+
+
 /**
  * Including template files
  * 

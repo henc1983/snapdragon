@@ -9,14 +9,14 @@ const terser = require('gulp-terser');
 
 
 gulp.task('watch', function(){
-    gulp.watch(['*.scss', './src/styles/**/*.scss'], gulp.parallel(['loop', 'loopMin', 'mainStyle']));
+    gulp.watch(['*.scss', './src/styles/**/*.scss'], gulp.parallel(['addedStyles', 'addedStylesMin', 'mainStyle']));
 });
 
 
 
 
 gulp.task('mainStyle', async () => {
-    return gulp.src('style.scss')
+    return gulp.src('*.scss')
         .pipe(sourcemaps.init())
         .pipe(sass({style: 'compressed'}).on('error', sass.logError))
         .pipe(sourcemaps.write())
@@ -27,8 +27,8 @@ gulp.task('mainStyle', async () => {
 
 
 
-gulp.task('loop', async () => {
-    return gulp.src('./src/styles/loop.scss')
+gulp.task('addedStyles', async () => {
+    return gulp.src('./src/styles/*.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest('assets/styles'))
     }
@@ -37,8 +37,8 @@ gulp.task('loop', async () => {
 
 
 
-gulp.task('loopMin', async () => {
-    return gulp.src('./src/styles/loop.scss')
+gulp.task('addedStylesMin', async () => {
+    return gulp.src('./src/styles/*.scss')
         .pipe(sourcemaps.init())
         .pipe(sass({style: 'compressed'}).on('error', sass.logError))
         .pipe(sourcemaps.write())

@@ -1,0 +1,25 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: var(--wp--preset--font-family--primary);
+    font-size: var(--wp--preset--font-size--medium);
+    line-height: 1.6;
+    font-weight: 400;
+    color: var(--wp--preset--color--contrast);
+    background-color: var(--wp--preset--color--base);
+    overflow-x: hidden;
+}
+
+.wrapper, .site-content {
+    width: 100%;
+    max-width: var(--wp--style--global--wide-size);
+    margin-inline: auto;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}

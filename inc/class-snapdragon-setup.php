@@ -26,6 +26,8 @@ if ( ! class_exists( 'SnapdragonSetup' ) ) :
 
 
 		private static $instance = null;
+		private $uri;
+		private $dir;
 
 		
 
@@ -40,6 +42,9 @@ if ( ! class_exists( 'SnapdragonSetup' ) ) :
 
 
 		public function __construct() {
+
+			$this->uri = get_template_directory_uri();
+			$this->dir = get_template_directory();
 
 			add_action( 'init', [ $this , 'set_important_cookies' ], 0 );
 			
@@ -146,11 +151,19 @@ if ( ! class_exists( 'SnapdragonSetup' ) ) :
 
 
 
-		public function enqueue_styles() {
-			global $snapdragon;
+		public function enqueue_styles() {			
+			
+			$snapdragon = snapdragon_object_return();
+			
+			if ( ! $snapdragon ) {
+				return;
+			}
 			
 			$suffix = ( defined( 'WP_DEBUG' ) && WP_DEBUG ) ? '' : '.min';
-			wp_enqueue_style( 'snapdragon-style', get_stylesheet_uri(), '', filemtime(get_template_directory() . '/style.css') );
+
+			$mobile = $snapdragon->cookies->get_cookie($snapdragon->defaults::MEDIAQUERY_COOKIE_NAME) === 'desktop' ? '' : '-mobile';
+
+			wp_enqueue_style( 'snapdragon-style', $this->uri . "/style$mobile.css", '', filemtime($this->dir . "/style$mobile.css" ) );
 			
 			if( is_home() && ! is_front_page() ) {
 				wp_enqueue_style( 'snapdragon-loop-style', get_template_directory_uri() . "/assets/styles/loop$suffix.css", '', filemtime(get_template_directory() . "/assets/styles/loop$suffix.css") );

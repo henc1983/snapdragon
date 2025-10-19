@@ -55,12 +55,13 @@ if ( ! class_exists( 'Snapdragon' ) ) :
 			// Create main $snapdragon object
 			$GLOBALS['snapdragon'] = ( object ) $this;
 
+			// Include theme functions
+			require_once 'inc/snapdragon-theme-functions.php';
 
 			$theme = wp_get_theme();
 			$this->version 		= $theme->get( 'Version' );
 			$this->author		= $theme->get( 'Author' );
 
-			$this->translates 	= ( object ) [];
 			$this->customizer 	= ( object ) [];
 			$this->woocommerce 	= ( object ) [];
 			
@@ -70,6 +71,7 @@ if ( ! class_exists( 'Snapdragon' ) ) :
 			$this->init_helpers();
 			$this->init_cookies();
 			$this->init_requests();
+			$this->init_translates();
 			$this->init_setup();
 
 		}
@@ -106,6 +108,13 @@ if ( ! class_exists( 'Snapdragon' ) ) :
 
 		private function init_setup() {
 			$this->setup = $this->check_file(__DIR__ . '/class-snapdragon-setup.php');
+			return $this;
+		}
+		
+		
+
+		private function init_translates() {
+			$this->translates = $this->check_file(__DIR__ . '/class-snapdragon-translates.php');
 			return $this;
 		}
 

@@ -29,7 +29,6 @@ if ( ! class_exists( 'Snapdragon' ) ) :
 
 		public $defaults;
 		public $cookies;
-		public $helpers;
 		public $translates;
 		public $requests;
 		public $setup;
@@ -55,9 +54,7 @@ if ( ! class_exists( 'Snapdragon' ) ) :
 			// Create main $snapdragon object
 			$GLOBALS['snapdragon'] = ( object ) $this;
 
-			// Include theme functions
-			require_once 'inc/snapdragon-theme-functions.php';
-
+			
 			$theme = wp_get_theme();
 			$this->version 		= $theme->get( 'Version' );
 			$this->author		= $theme->get( 'Author' );
@@ -68,7 +65,6 @@ if ( ! class_exists( 'Snapdragon' ) ) :
 
 			// Add helper classes
 			$this->init_defaults();
-			$this->init_helpers();
 			$this->init_cookies();
 			$this->init_requests();
 			$this->init_translates();
@@ -92,13 +88,6 @@ if ( ! class_exists( 'Snapdragon' ) ) :
 		
 		
 
-		private function init_helpers() {
-			$this->helpers = $this->check_file(__DIR__ . '/helpers/class-snapdragon-helpers.php');
-			return $this;
-		}
-		
-		
-
 		private function init_requests() {
 			$this->requests = $this->check_file(__DIR__ . '/helpers/class-snapdragon-requests.php');
 			return $this;
@@ -114,7 +103,7 @@ if ( ! class_exists( 'Snapdragon' ) ) :
 		
 
 		private function init_translates() {
-			$this->translates = $this->check_file(__DIR__ . '/class-snapdragon-translates.php');
+			$this->translates = $this->check_file(__DIR__ . '/helpers/class-snapdragon-translates.php');
 			return $this;
 		}
 

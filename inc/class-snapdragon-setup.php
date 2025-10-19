@@ -83,7 +83,8 @@ if ( ! class_exists( 'SnapdragonSetup' ) ) :
 
 
 				if ( $count > 0 ) {
-					$snapdragon->helpers->reload_page();
+					print('<script type="text/javascript">window.top.location="'.$_SERVER['REQUEST_URI'].'";</script>');
+					exit;
 				}
 
 			}

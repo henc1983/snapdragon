@@ -17,7 +17,6 @@ if ( ! isset( $content_width ) ) {
 }
 
 
-
 /**
  * 
  * Initialize all the things.
@@ -33,12 +32,12 @@ if ( ! isset( $content_width ) ) {
  * @return (object) $snapdragon
  * 
  */
-require_once 'inc/class-snapdragon.php';
+require_once get_template_directory() . '/inc/class-snapdragon.php';
 
 
 
 // Include theme functions
-require_once 'inc/snapdragon-theme-functions.php';
+require_once get_template_directory() . '/inc/snapdragon-theme-functions.php';
 
 
 
@@ -48,5 +47,5 @@ require_once 'inc/snapdragon-theme-functions.php';
  * @see inc/snapdragon-template-functions.php
  * @see inc/snapdragon-template-hooks.php
  */
-require_once 'inc/snapdragon-template-functions.php';
-require_once 'inc/snapdragon-template-hooks.php';
+require_once get_template_directory() . '/inc/snapdragon-template-functions.php';
+require_once get_template_directory() . '/inc/snapdragon-template-hooks.php';

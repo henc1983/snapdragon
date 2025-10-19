@@ -245,21 +245,15 @@ if ( ! function_exists( 'snapdragon_page_header' )) {
             return;
         }
 
-        global $snapdragon;
-
         ?>
 
         <header class="entry-header">
             <?php
 
-            if ( is_object($snapdragon) && property_exists( $snapdragon , 'helpers' ) && method_exists( $snapdragon->helpers , 'post_thumbnail') ) {
-
-                $snapdragon->helpers->post_thumbnail( 'full' );
-
-            }
-
+            snapdragon_post_thumbnail( 'full' );
 
             the_title( '<h1 class="entry-title">', '</h1>' );
+            
             ?>
         </header
 

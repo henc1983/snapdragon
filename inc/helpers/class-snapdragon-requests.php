@@ -56,7 +56,8 @@ if ( ! class_exists( 'SnapdragonRequestHandler' ) ) :
                 $snapdragon->cookies->set_cookie($cookie_name, $_POST[$post_name]);
                 unset($_POST[$post_name]);
                 
-                $snapdragon->helpers->reload_page();
+                print('<script type="text/javascript">window.top.location="'.$_SERVER['REQUEST_URI'].'";</script>');
+		        exit;
             }
         }  
 
